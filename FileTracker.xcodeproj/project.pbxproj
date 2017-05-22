@@ -14,6 +14,7 @@
 		44B8C4E31ECDF9B20029366D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B8C4E11ECDF9B20029366D /* LaunchScreen.storyboard */; };
 		44B8C4EE1ECDF9B20029366D /* FileTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C4ED1ECDF9B20029366D /* FileTrackerTests.swift */; };
 		44B8C4F91ECDF9B20029366D /* FileTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C4F81ECDF9B20029366D /* FileTrackerUITests.swift */; };
+		44B8C5071ECDFFC60029366D /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B8C5061ECDFFC60029366D /* DirectoryMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		44B8C4F41ECDF9B20029366D /* FileTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B8C4F81ECDF9B20029366D /* FileTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTrackerUITests.swift; sourceTree = "<group>"; };
 		44B8C4FA1ECDF9B20029366D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B8C5061ECDFFC60029366D /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				44B8C4D81ECDF9B20029366D /* AppDelegate.swift */,
 				44B8C4DA1ECDF9B20029366D /* ViewController.swift */,
+				44B8C5061ECDFFC60029366D /* DirectoryMonitor.swift */,
 				44B8C4DC1ECDF9B20029366D /* Main.storyboard */,
 				44B8C4DF1ECDF9B20029366D /* Assets.xcassets */,
 				44B8C4E11ECDF9B20029366D /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44B8C4DB1ECDF9B20029366D /* ViewController.swift in Sources */,
+				44B8C5071ECDFFC60029366D /* DirectoryMonitor.swift in Sources */,
 				44B8C4D91ECDF9B20029366D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FileTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsoft.FileTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FileTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsoft.FileTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +509,7 @@
 				44B8C4FF1ECDF9B20029366D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44B8C5001ECDF9B20029366D /* Build configuration list for PBXNativeTarget "FileTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +518,7 @@
 				44B8C5021ECDF9B20029366D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44B8C5031ECDF9B20029366D /* Build configuration list for PBXNativeTarget "FileTrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +527,7 @@
 				44B8C5051ECDF9B20029366D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

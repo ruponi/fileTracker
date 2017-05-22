@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,10 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        application.registerUserNotificationSettings(
+            UIUserNotificationSettings (types: [UIUserNotificationType.alert,UIUserNotificationType.sound] , categories: nil)
+        )
         // Override point for customization after application launch.
         return true
     }
 
+
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
+        if (application.applicationState==UIApplicationState.active){
+            let fullPathAlert:UIAlertController=UIAlertController.init(title: notification.alertTitle, message: notification.alertBody, preferredStyle: .actionSheet)
+            
+            self.window?.rootViewController?.present(fullPathAlert, animated: true) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+3.0, execute: {
+                    fullPathAlert.dismiss(animated: true, completion: {
+                        
+                    })
+                })
+            }
+ 
+        }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

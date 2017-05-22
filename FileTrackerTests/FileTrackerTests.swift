@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import FileTracker
 
 class FileTrackerTests: XCTestCase {
@@ -21,10 +22,47 @@ class FileTrackerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testInitMonitirWithCorrectURL() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory , in: .userDomainMask).first!
+        
+        let directoryWatcher:DirectoryMonitor=DirectoryMonitor.init(pathToWatch: documentsDirectory as NSURL) { (notification:DirectoryMonitor.ChangeNotification) in
+            print("Directory contents have changed",notification)
+
+        }
+        do {
+            try directoryWatcher.startObserving()
+            XCTAssert(directoryWatcher.isObserving)
+        }
+        catch  {
+            print(error)
+        }
+
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testinitMonitirWithBedURL() {
+        let documentsDirectory:URL = URL.init(string: "user/dfdfff/")!
+        
+        let directoryWatcher:DirectoryMonitor=DirectoryMonitor.init(pathToWatch: documentsDirectory as NSURL) { (notification:DirectoryMonitor.ChangeNotification) in
+            print("Directory contents have changed",notification)
+            
+        }
+        do {
+            try directoryWatcher.startObserving()
+            
+        }
+        catch  {
+            print(error)
+            XCTAssert(!directoryWatcher.isObserving)
+        }
+        
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
