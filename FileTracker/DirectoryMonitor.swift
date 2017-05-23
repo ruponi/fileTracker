@@ -80,7 +80,7 @@ public class DirectoryMonitor {
          self.metadata = directoryMetadata()
  
         // Monitor the directory for writes, delete, rename
-        source = DispatchSource.makeFileSystemObjectSource(fileDescriptor: fd, eventMask: [.write, .delete, .rename,], queue: queue)
+        source = DispatchSource.makeFileSystemObjectSource(fileDescriptor: fd, eventMask: [.write, .delete, .rename], queue: queue)
         
             
                   if let sources = source {
