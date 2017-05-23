@@ -147,7 +147,10 @@ public class DirectoryMonitor {
                 autoreleasepool {
                     if let fileAttributes = try? fm.attributesOfItem(atPath: file.path) {
                         let fileSize = fileAttributes[FileAttributeKey.size] as! Int
-                        directoryMetadata.append((file.lastPathComponent,fileSize))
+                        let fileDate = fileAttributes[FileAttributeKey.modificationDate] as! Date
+                        let intFiledate = fileDate.timeIntervalSince1970
+                        let file_hash = NSInteger(intFiledate)
+                        directoryMetadata.append((file.lastPathComponent,file_hash))
                     }
                 }
             }
